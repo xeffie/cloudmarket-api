@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>CloudMarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="page-layout">
+    <aside class="sidebar">
+        <div class="logo-area">
+            <img src="cloudmarket-logo.png" alt="CloudMarket logo" class="logo">
+        </div>
+        <p class="subtitle">Ready to give your old stuff a new home?</p>
+
+        <form id="listingForm" class="form-card">
+            <label>
+                Title
+                <input type="text" id="title" placeholder="What are you selling?" required>
+            </label>
+
+            <label>
+                Description
+                <textarea id="description" placeholder="Describe the item"></textarea>
+            </label>
+
+            <label>
+                Price
+                <input type="number" id="price" placeholder="How much?" required>
+            </label>
+
+            <label>
+                Category
+                <input type="text" id="category" placeholder="Electronics etc." required>
+            </label>
+
+            <label>
+                Seller name
+                <input type="text" id="sellerName" placeholder="Anna Anderson" required>
+            </label>
+
+            <label>
+                Condition
+                <select id="itemCondition">
+                    <option value="NEW">New</option>
+                    <option value="LIKE_NEW">Like new</option>
+                    <option value="GOOD">Good</option>
+                    <option value="USED">Used</option>
+                    <option value="DAMAGED">Damaged</option>
+                </select>
+            </label>
+
+            <label>
+                Image
+                <input type="file" id="image" accept="image/*">
+            </label>
+
+            <label>
+                Status
+                <select id="status">
+                    <option value="AVAILABLE">Available</option>
+                    <option value="RESERVED">Reserved</option>
+                    <option value="SOLD">Sold</option>
+                </select>
+            </label>
+
+            <button type="submit">Create listing</button>
+        </form>
+    </aside>
+
+    <section class="content">
+        <div class="content-header">
+            <div>
+                <h2>Discover listings</h2>
+                <p>Explore items waiting for their next owner.</p>
+            </div>
+
+            <button class="secondary-button" onclick="loadListings()">Refresh</button>
+        </div>
+
+        <div id="listings" class="listings-grid"></div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
